@@ -78,3 +78,4 @@
         <asp:Button ID="btnInsertAttendance" runat="server" Text="Insert Attendance" CssClass="common-button-green" Visible="false" OnClick="btnInsertAttendance_Click" />
     </div>
 </asp:Content>
+<%--test--%>
