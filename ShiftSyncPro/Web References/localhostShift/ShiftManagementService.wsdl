@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddShift">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shiftType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddShiftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddShiftResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShift">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="shiftType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShiftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateShiftResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShift">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteShiftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteShiftResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllShifts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllShiftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllShiftsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShiftById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShiftByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShiftByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStartTimeById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStartTimeByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStartTimeByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEndTimeById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEndTimeByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEndTimeByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShiftByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shiftType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShiftByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShiftByTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddShiftSoapIn">
+    <wsdl:part name="parameters" element="tns:AddShift" />
+  </wsdl:message>
+  <wsdl:message name="AddShiftSoapOut">
+    <wsdl:part name="parameters" element="tns:AddShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShift" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShiftSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteShift" />
+  </wsdl:message>
+  <wsdl:message name="DeleteShiftSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShiftsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllShifts" />
+  </wsdl:message>
+  <wsdl:message name="GetAllShiftsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllShiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShiftByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShiftById" />
+  </wsdl:message>
+  <wsdl:message name="GetShiftByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShiftByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStartTimeByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStartTimeById" />
+  </wsdl:message>
+  <wsdl:message name="GetStartTimeByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStartTimeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEndTimeByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEndTimeById" />
+  </wsdl:message>
+  <wsdl:message name="GetEndTimeByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEndTimeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShiftByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShiftByType" />
+  </wsdl:message>
+  <wsdl:message name="GetShiftByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShiftByTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShiftManagementServiceSoap">
+    <wsdl:operation name="AddShift">
+      <wsdl:input message="tns:AddShiftSoapIn" />
+      <wsdl:output message="tns:AddShiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <wsdl:input message="tns:UpdateShiftSoapIn" />
+      <wsdl:output message="tns:UpdateShiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShift">
+      <wsdl:input message="tns:DeleteShiftSoapIn" />
+      <wsdl:output message="tns:DeleteShiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShifts">
+      <wsdl:input message="tns:GetAllShiftsSoapIn" />
+      <wsdl:output message="tns:GetAllShiftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftById">
+      <wsdl:input message="tns:GetShiftByIdSoapIn" />
+      <wsdl:output message="tns:GetShiftByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStartTimeById">
+      <wsdl:input message="tns:GetStartTimeByIdSoapIn" />
+      <wsdl:output message="tns:GetStartTimeByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEndTimeById">
+      <wsdl:input message="tns:GetEndTimeByIdSoapIn" />
+      <wsdl:output message="tns:GetEndTimeByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftByType">
+      <wsdl:input message="tns:GetShiftByTypeSoapIn" />
+      <wsdl:output message="tns:GetShiftByTypeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShiftManagementServiceSoap" type="tns:ShiftManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddShift">
+      <soap:operation soapAction="http://tempuri.org/AddShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <soap:operation soapAction="http://tempuri.org/UpdateShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShift">
+      <soap:operation soapAction="http://tempuri.org/DeleteShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShifts">
+      <soap:operation soapAction="http://tempuri.org/GetAllShifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftById">
+      <soap:operation soapAction="http://tempuri.org/GetShiftById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStartTimeById">
+      <soap:operation soapAction="http://tempuri.org/GetStartTimeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEndTimeById">
+      <soap:operation soapAction="http://tempuri.org/GetEndTimeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftByType">
+      <soap:operation soapAction="http://tempuri.org/GetShiftByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShiftManagementServiceSoap12" type="tns:ShiftManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddShift">
+      <soap12:operation soapAction="http://tempuri.org/AddShift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteShift">
+      <soap12:operation soapAction="http://tempuri.org/DeleteShift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllShifts">
+      <soap12:operation soapAction="http://tempuri.org/GetAllShifts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftById">
+      <soap12:operation soapAction="http://tempuri.org/GetShiftById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStartTimeById">
+      <soap12:operation soapAction="http://tempuri.org/GetStartTimeById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEndTimeById">
+      <soap12:operation soapAction="http://tempuri.org/GetEndTimeById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShiftByType">
+      <soap12:operation soapAction="http://tempuri.org/GetShiftByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShiftManagementService">
+    <wsdl:port name="ShiftManagementServiceSoap" binding="tns:ShiftManagementServiceSoap">
+      <soap:address location="https://localhost:44308/ShiftManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShiftManagementServiceSoap12" binding="tns:ShiftManagementServiceSoap12">
+      <soap12:address location="https://localhost:44308/ShiftManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

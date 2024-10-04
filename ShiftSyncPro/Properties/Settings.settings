@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ShiftSyncPro.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ShiftSyncPro_localhostEmployee_EmployeeManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/EmployeeManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="ShiftSyncPro_localhostSchedule_ScheduleManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/ScheduleManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="ShiftSyncPro_localhostUser_UserManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/UserManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="ShiftSyncPro_localhostShift_ShiftManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/ShiftManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="ShiftSyncPro_localhostRequest_RequestManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/RequestManagementService.asmx</Value>
+    </Setting>
+    <Setting Name="ShiftSyncPro_localhostAttendance_AttendanceManagementService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://localhost:44308/AttendanceManagementService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

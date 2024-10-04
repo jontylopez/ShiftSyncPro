@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddWeeklyRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="workerComment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proofDocument" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="proofDocumentType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddWeeklyRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddWeeklyRequestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="requestId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="changeDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="supervisorComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRequestStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateRequestStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestsByUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsBySchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsByScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestsByScheduleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsByStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestsByStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestsByStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofDocumentById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProofDocumentByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProofDocumentByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddWeeklyRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:AddWeeklyRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddWeeklyRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:AddWeeklyRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRequestStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestsByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestsByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestsBySchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestsByScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestsByStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestsByStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestsByStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestById" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProofDocumentByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProofDocumentById" />
+  </wsdl:message>
+  <wsdl:message name="GetProofDocumentByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProofDocumentByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RequestManagementServiceSoap">
+    <wsdl:operation name="AddWeeklyRequest">
+      <wsdl:input message="tns:AddWeeklyRequestSoapIn" />
+      <wsdl:output message="tns:AddWeeklyRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestStatus">
+      <wsdl:input message="tns:UpdateRequestStatusSoapIn" />
+      <wsdl:output message="tns:UpdateRequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByUser">
+      <wsdl:input message="tns:GetRequestsByUserSoapIn" />
+      <wsdl:output message="tns:GetRequestsByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsBySchedule">
+      <wsdl:input message="tns:GetRequestsByScheduleSoapIn" />
+      <wsdl:output message="tns:GetRequestsByScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByStatus">
+      <wsdl:input message="tns:GetRequestsByStatusSoapIn" />
+      <wsdl:output message="tns:GetRequestsByStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestById">
+      <wsdl:input message="tns:GetRequestByIdSoapIn" />
+      <wsdl:output message="tns:GetRequestByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProofDocumentById">
+      <wsdl:input message="tns:GetProofDocumentByIdSoapIn" />
+      <wsdl:output message="tns:GetProofDocumentByIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RequestManagementServiceSoap" type="tns:RequestManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddWeeklyRequest">
+      <soap:operation soapAction="http://tempuri.org/AddWeeklyRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByUser">
+      <soap:operation soapAction="http://tempuri.org/GetRequestsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsBySchedule">
+      <soap:operation soapAction="http://tempuri.org/GetRequestsBySchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByStatus">
+      <soap:operation soapAction="http://tempuri.org/GetRequestsByStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestById">
+      <soap:operation soapAction="http://tempuri.org/GetRequestById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofDocumentById">
+      <soap:operation soapAction="http://tempuri.org/GetProofDocumentById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RequestManagementServiceSoap12" type="tns:RequestManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddWeeklyRequest">
+      <soap12:operation soapAction="http://tempuri.org/AddWeeklyRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRequestStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByUser">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestsByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsBySchedule">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestsBySchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsByStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestsByStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestById">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProofDocumentById">
+      <soap12:operation soapAction="http://tempuri.org/GetProofDocumentById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RequestManagementService">
+    <wsdl:port name="RequestManagementServiceSoap" binding="tns:RequestManagementServiceSoap">
+      <soap:address location="https://localhost:44308/RequestManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RequestManagementServiceSoap12" binding="tns:RequestManagementServiceSoap12">
+      <soap12:address location="https://localhost:44308/RequestManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

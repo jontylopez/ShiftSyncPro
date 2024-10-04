@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekStartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayCreate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="timeCreate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day1ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day2ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day3ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day4ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day5ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day6ShiftId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7Date" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="day7ShiftId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteScheduleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchedulesByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchedulesByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchedulesByUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchedulesByGroupAndDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchedulesByGroupAndDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchedulesByGroupAndDateRangeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShift">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="scheduleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="newShiftId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateShiftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateShiftResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByStartDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="weekStartDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByStartDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByStartDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpcomingScheduleForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpcomingScheduleForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpcomingScheduleForUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSchedule">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllScheduleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSchedule" />
+  </wsdl:message>
+  <wsdl:message name="AddScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSchedule" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSchedule" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchedulesByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchedulesByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetSchedulesByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchedulesByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchedulesByGroupAndDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchedulesByGroupAndDateRange" />
+  </wsdl:message>
+  <wsdl:message name="GetSchedulesByGroupAndDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchedulesByGroupAndDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleById" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateShift" />
+  </wsdl:message>
+  <wsdl:message name="UpdateShiftSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByStartDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleByStartDate" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByStartDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpcomingScheduleForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpcomingScheduleForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUpcomingScheduleForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpcomingScheduleForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetAllScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllScheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ScheduleManagementServiceSoap">
+    <wsdl:operation name="AddSchedule">
+      <wsdl:input message="tns:AddScheduleSoapIn" />
+      <wsdl:output message="tns:AddScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <wsdl:input message="tns:UpdateScheduleSoapIn" />
+      <wsdl:output message="tns:UpdateScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <wsdl:input message="tns:DeleteScheduleSoapIn" />
+      <wsdl:output message="tns:DeleteScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByUser">
+      <wsdl:input message="tns:GetSchedulesByUserSoapIn" />
+      <wsdl:output message="tns:GetSchedulesByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByGroupAndDateRange">
+      <wsdl:input message="tns:GetSchedulesByGroupAndDateRangeSoapIn" />
+      <wsdl:output message="tns:GetSchedulesByGroupAndDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <wsdl:input message="tns:GetScheduleByIdSoapIn" />
+      <wsdl:output message="tns:GetScheduleByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <wsdl:input message="tns:UpdateShiftSoapIn" />
+      <wsdl:output message="tns:UpdateShiftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByStartDate">
+      <wsdl:input message="tns:GetScheduleByStartDateSoapIn" />
+      <wsdl:output message="tns:GetScheduleByStartDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpcomingScheduleForUser">
+      <wsdl:input message="tns:GetUpcomingScheduleForUserSoapIn" />
+      <wsdl:output message="tns:GetUpcomingScheduleForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedule">
+      <wsdl:input message="tns:GetAllScheduleSoapIn" />
+      <wsdl:output message="tns:GetAllScheduleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ScheduleManagementServiceSoap" type="tns:ScheduleManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSchedule">
+      <soap:operation soapAction="http://tempuri.org/AddSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <soap:operation soapAction="http://tempuri.org/UpdateSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <soap:operation soapAction="http://tempuri.org/DeleteSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByUser">
+      <soap:operation soapAction="http://tempuri.org/GetSchedulesByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByGroupAndDateRange">
+      <soap:operation soapAction="http://tempuri.org/GetSchedulesByGroupAndDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <soap:operation soapAction="http://tempuri.org/UpdateShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByStartDate">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleByStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpcomingScheduleForUser">
+      <soap:operation soapAction="http://tempuri.org/GetUpcomingScheduleForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedule">
+      <soap:operation soapAction="http://tempuri.org/GetAllSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ScheduleManagementServiceSoap12" type="tns:ScheduleManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSchedule">
+      <soap12:operation soapAction="http://tempuri.org/AddSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByUser">
+      <soap12:operation soapAction="http://tempuri.org/GetSchedulesByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchedulesByGroupAndDateRange">
+      <soap12:operation soapAction="http://tempuri.org/GetSchedulesByGroupAndDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShift">
+      <soap12:operation soapAction="http://tempuri.org/UpdateShift" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByStartDate">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleByStartDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpcomingScheduleForUser">
+      <soap12:operation soapAction="http://tempuri.org/GetUpcomingScheduleForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedule">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScheduleManagementService">
+    <wsdl:port name="ScheduleManagementServiceSoap" binding="tns:ScheduleManagementServiceSoap">
+      <soap:address location="https://localhost:44308/ScheduleManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ScheduleManagementServiceSoap12" binding="tns:ScheduleManagementServiceSoap12">
+      <soap12:address location="https://localhost:44308/ScheduleManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

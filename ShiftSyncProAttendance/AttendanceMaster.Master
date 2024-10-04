@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AttendanceMaster.master.cs" Inherits="ShiftSyncProAttendance.AttendanceMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>SSP Admin</title>
+    <link rel="stylesheet" href="~/Css/Style.css">
+    <script type="text/javascript">
+        function confirmLogout() {
+            return confirm("Are you sure you want to logout?");
+        }
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="common-header">
+            <div class="header-container">
+                <asp:Image ID="Image1" runat="server" Height="83px" ImageUrl="~/Images/logo.png" CssClass="common-logo" />
+                <asp:Label ID="Label1" runat="server" CssClass="common-company-name" Text="ShiftSync Pro"></asp:Label>
+            </div>
+            <div class="user-info-container">
+                <asp:Label ID="Label3" runat="server" Text="User ID:" CssClass="user-info-label"></asp:Label>
+                <asp:Label ID="lblUserId" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+                <asp:Label ID="Label2" runat="server" Text="User Name:" CssClass="user-info-label"></asp:Label>
+                <asp:Label ID="lblWelcome" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+                <asp:Label ID="Label4" runat="server" Text="User Role:" CssClass="user-info-label"></asp:Label>
+                <asp:Label ID="lblUserRole" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+                <asp:Label ID="Label5" runat="server" Text="Date:" CssClass="user-info-label"></asp:Label>
+                <asp:Label ID="lblDate" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+
+                <asp:Label ID="Label6" runat="server" Text="Time:" CssClass="user-info-label"></asp:Label>
+                <asp:Label ID="lblTime" runat="server" Text="" CssClass="user-info-label"></asp:Label>
+            </div>
+        </header>
+
+        <div class="common-sidebar">
+            <ul class="common-nav-menu">
+                <li><a href="AttendanceHome.aspx">Attendance Home</a></li>
+
+                <li><a href="Login.aspx" onclick="return confirmLogout();">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="common-content">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="common-footer">
+            <p>&copy; 2024 ShiftSync Pro. All rights reserved.</p>
+        </footer>
+    </form>
+</body>
+</html>

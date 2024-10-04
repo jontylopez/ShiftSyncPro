@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertAttendanceBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="attendanceList" type="tns:ArrayOfAttendance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAttendance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Attendance" nillable="true" type="tns:Attendance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Attendance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScheduleId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeekStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkerComment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupervisorComment" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertAttendanceBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertAttendanceBatchResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStartTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStartTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateStartTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateStartTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEndTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEndTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEndTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newInTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateInTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOutTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newOutTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOutTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOutTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAttStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAttStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkerComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="workerComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateWorkerCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateWorkerCommentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupervisorComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="supervisorComment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSupervisorCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSupervisorCommentResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAttendance">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAttendanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAttendanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttendanceByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttendanceByUserResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByWeekStartDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="weekStartDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByWeekStartDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttendanceByWeekStartDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="selectedDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttendanceByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttendanceByDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="inTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertInTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOutTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="outTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOutTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertOutTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertAttendanceBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAttendanceBatch" />
+  </wsdl:message>
+  <wsdl:message name="InsertAttendanceBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAttendanceBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStartTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateStartTime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateStartTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateStartTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEndTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEndTime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEndTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEndTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInTime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOutTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOutTime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOutTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOutTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAttStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAttStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAttStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkerCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateWorkerComment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateWorkerCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateWorkerCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupervisorCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSupervisorComment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSupervisorCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSupervisorCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAttendanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAttendance" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAttendanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAttendanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttendanceById" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByWeekStartDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByWeekStartDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByWeekStartDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByWeekStartDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetAttendanceByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttendanceByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertInTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInTime" />
+  </wsdl:message>
+  <wsdl:message name="InsertInTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertInTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertOutTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertOutTime" />
+  </wsdl:message>
+  <wsdl:message name="InsertOutTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertOutTimeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AttendanceManagementServiceSoap">
+    <wsdl:operation name="InsertAttendanceBatch">
+      <wsdl:input message="tns:InsertAttendanceBatchSoapIn" />
+      <wsdl:output message="tns:InsertAttendanceBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStartTime">
+      <wsdl:input message="tns:UpdateStartTimeSoapIn" />
+      <wsdl:output message="tns:UpdateStartTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEndTime">
+      <wsdl:input message="tns:UpdateEndTimeSoapIn" />
+      <wsdl:output message="tns:UpdateEndTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInTime">
+      <wsdl:input message="tns:UpdateInTimeSoapIn" />
+      <wsdl:output message="tns:UpdateInTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOutTime">
+      <wsdl:input message="tns:UpdateOutTimeSoapIn" />
+      <wsdl:output message="tns:UpdateOutTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttStatus">
+      <wsdl:input message="tns:UpdateAttStatusSoapIn" />
+      <wsdl:output message="tns:UpdateAttStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkerComment">
+      <wsdl:input message="tns:UpdateWorkerCommentSoapIn" />
+      <wsdl:output message="tns:UpdateWorkerCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupervisorComment">
+      <wsdl:input message="tns:UpdateSupervisorCommentSoapIn" />
+      <wsdl:output message="tns:UpdateSupervisorCommentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAttendance">
+      <wsdl:input message="tns:GetAllAttendanceSoapIn" />
+      <wsdl:output message="tns:GetAllAttendanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceById">
+      <wsdl:input message="tns:GetAttendanceByIdSoapIn" />
+      <wsdl:output message="tns:GetAttendanceByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByUser">
+      <wsdl:input message="tns:GetAttendanceByUserSoapIn" />
+      <wsdl:output message="tns:GetAttendanceByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByWeekStartDate">
+      <wsdl:input message="tns:GetAttendanceByWeekStartDateSoapIn" />
+      <wsdl:output message="tns:GetAttendanceByWeekStartDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByDate">
+      <wsdl:input message="tns:GetAttendanceByDateSoapIn" />
+      <wsdl:output message="tns:GetAttendanceByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInTime">
+      <wsdl:input message="tns:InsertInTimeSoapIn" />
+      <wsdl:output message="tns:InsertInTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutTime">
+      <wsdl:input message="tns:InsertOutTimeSoapIn" />
+      <wsdl:output message="tns:InsertOutTimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AttendanceManagementServiceSoap" type="tns:AttendanceManagementServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAttendanceBatch">
+      <soap:operation soapAction="http://tempuri.org/InsertAttendanceBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStartTime">
+      <soap:operation soapAction="http://tempuri.org/UpdateStartTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEndTime">
+      <soap:operation soapAction="http://tempuri.org/UpdateEndTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInTime">
+      <soap:operation soapAction="http://tempuri.org/UpdateInTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOutTime">
+      <soap:operation soapAction="http://tempuri.org/UpdateOutTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateAttStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkerComment">
+      <soap:operation soapAction="http://tempuri.org/UpdateWorkerComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupervisorComment">
+      <soap:operation soapAction="http://tempuri.org/UpdateSupervisorComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAttendance">
+      <soap:operation soapAction="http://tempuri.org/GetAllAttendance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceById">
+      <soap:operation soapAction="http://tempuri.org/GetAttendanceById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByUser">
+      <soap:operation soapAction="http://tempuri.org/GetAttendanceByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByWeekStartDate">
+      <soap:operation soapAction="http://tempuri.org/GetAttendanceByWeekStartDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByDate">
+      <soap:operation soapAction="http://tempuri.org/GetAttendanceByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInTime">
+      <soap:operation soapAction="http://tempuri.org/InsertInTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutTime">
+      <soap:operation soapAction="http://tempuri.org/InsertOutTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AttendanceManagementServiceSoap12" type="tns:AttendanceManagementServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAttendanceBatch">
+      <soap12:operation soapAction="http://tempuri.org/InsertAttendanceBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStartTime">
+      <soap12:operation soapAction="http://tempuri.org/UpdateStartTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEndTime">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEndTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInTime">
+      <soap12:operation soapAction="http://tempuri.org/UpdateInTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOutTime">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOutTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAttStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkerComment">
+      <soap12:operation soapAction="http://tempuri.org/UpdateWorkerComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupervisorComment">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSupervisorComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAttendance">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAttendance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceById">
+      <soap12:operation soapAction="http://tempuri.org/GetAttendanceById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByUser">
+      <soap12:operation soapAction="http://tempuri.org/GetAttendanceByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByWeekStartDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAttendanceByWeekStartDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetAttendanceByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInTime">
+      <soap12:operation soapAction="http://tempuri.org/InsertInTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutTime">
+      <soap12:operation soapAction="http://tempuri.org/InsertOutTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AttendanceManagementService">
+    <wsdl:port name="AttendanceManagementServiceSoap" binding="tns:AttendanceManagementServiceSoap">
+      <soap:address location="https://localhost:44308/AttendanceManagementService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AttendanceManagementServiceSoap12" binding="tns:AttendanceManagementServiceSoap12">
+      <soap12:address location="https://localhost:44308/AttendanceManagementService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

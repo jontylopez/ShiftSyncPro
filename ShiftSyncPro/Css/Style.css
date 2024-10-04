@@ -1,0 +1,452 @@
+﻿/* General Body Styling for Login Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ECF0F1;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container Styling */
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Header Section */
+.login-header {
+    margin-bottom: 20px;
+}
+
+.login-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+
+/* Form Elements */
+.login-form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #2C3E50;
+}
+
+.login-input-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+}
+
+    .login-input-box:focus {
+        border-color: #18BC9C;
+        outline: none;
+    }
+
+/* Button Styling */
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .login-button:hover {
+        background-color: #1A242F;
+    }
+
+/* Error Message */
+.login-error-message {
+    margin-bottom: 10px;
+    color: #E74C3C;
+}
+
+/* Footer Section */
+.login-footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Header Styling */
+.common-header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.common-logo {
+    height: 83px;
+    margin-right: 10px;
+}
+
+.common-company-name {
+    font-size: 28px;
+    font-weight: bold;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Sidebar Styling */
+.common-sidebar {
+    width: 250px;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: #34495E;
+    padding-top: 20px;
+    color: white;
+}
+
+.common-nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+    .common-nav-menu li {
+        padding: 10px 20px;
+    }
+
+        .common-nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #4C5B69;
+        }
+
+            .common-nav-menu li a:hover {
+                background-color: #18BC9C;
+                color: white;
+            }
+
+.common-dropdown {
+    position: relative;
+}
+
+.common-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #34495E;
+    min-width: 160px;
+    z-index: 1;
+}
+
+    .common-dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+    }
+
+        .common-dropdown-content a:hover {
+            background-color: #18BC9C;
+            border-radius: 4px;
+        }
+
+.common-dropdown:hover .common-dropdown-content {
+    display: block;
+}
+
+.common-dropdown:hover .common-dropbtn {
+    background-color: #18BC9C;
+}
+
+/* Content Area Styling */
+.common-content {
+    margin-left: 270px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    min-height: calc(100vh - 120px);
+    margin-top: 100px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+.common-footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Form Container Styling */
+.common-form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 30px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Group Styling */
+.common-form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Input Label Styling */
+.common-input-label {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #2C3E50;
+    text-align: left;
+}
+
+/* Input Box Styling */
+.common-input-box {
+    width: 100%;
+    padding: 12px; /* Slightly larger padding */
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .common-input-box:focus {
+        border-color: #18BC9C;
+        outline: none;
+    }
+
+/* Select Box Styling */
+.common-select-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+}
+
+/* Button Styling */
+.common-button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #2C3E50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .common-button:hover {
+        background-color: #1A242F;
+    }
+
+/* Red Button Styling */
+.common-button-red {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #E74C3C;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .common-button-red:hover {
+        background-color: #C0392B;
+    }
+
+/* Green Button Styling */
+.common-button-green {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #18BC9C;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .common-button-green:hover {
+        background-color: #128A6E;
+    }
+
+.common-title {
+    font-size: 28px; /* Increase size */
+    text-align: center; /* Center the title */
+    color: #2C3E50;
+}
+
+/* Table Styling */
+.common-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .common-table th, .common-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .common-table th {
+        background-color: #2C3E50;
+        color: white;
+    }
+
+    .common-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* User Info Container */
+.user-info-container {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    background-color: #2C3E50;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.user-info-label {
+    color: white;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+    /* Additional styling for text inside the labels */
+    .user-info-label:last-child {
+        margin-right: 0;
+    }
+/* Working Days Checkbox Group Styling */
+.working-days {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.day-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.common-checkbox {
+    margin-right: 10px;
+}
+
+.common-day-label {
+    width: 70px; /* Fixed width for day label */
+    font-weight: bold;
+}
+
+.common-date-label {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-left: 10px;
+}

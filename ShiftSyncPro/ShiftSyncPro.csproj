@@ -1,0 +1,496 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CFF8839D-B2C0-4661-8034-2C2FBCF2411D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShiftSyncPro</RootNamespace>
+    <AssemblyName>ShiftSyncPro</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AttendanceManagementService.asmx" />
+    <Content Include="Css\Style.css" />
+    <Content Include="EmployeeManagementService.asmx" />
+    <Content Include="Images\DefaultImage.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="RequestManagementService.asmx" />
+    <Content Include="ScheduleManagementService.asmx" />
+    <Content Include="ShiftManagementService.asmx" />
+    <Content Include="UserManagementService.asmx" />
+    <Content Include="AdminMaster.Master" />
+    <Content Include="AdminHome.aspx" />
+    <Content Include="AdminAddUserForm.aspx" />
+    <Content Include="AdminManageUser.aspx" />
+    <Content Include="AdminUpdateUserForm.aspx" />
+    <Content Include="SupervisorHome.aspx" />
+    <Content Include="SupervisorManageSchedule.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="SupervisorMaster.Master" />
+    <None Include="Web References\localhostAttendance\AttendanceManagementService.wsdl" />
+    <None Include="Web References\localhostAttendance\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhostEmployee\EmployeeManagementService.disco" />
+    <None Include="Web References\localhostRequest\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhostRequest\RequestManagementService.wsdl" />
+    <None Include="Web References\localhostSchedule\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhostSchedule\ScheduleManagementService.disco" />
+    <None Include="Web References\localhostRequest\RequestManagementService.disco" />
+    <None Include="Web References\localhostShift\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhostShift\ShiftManagementService.disco" />
+    <None Include="Web References\localhostUser\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\localhostShift\ShiftManagementService.wsdl" />
+    <None Include="Web References\localhostUser\UserManagementService.disco" />
+    <None Include="Web References\localhostAttendance\AttendanceManagementService.disco" />
+    <Content Include="ViewDocument.aspx" />
+    <Content Include="Web.config" />
+    <None Include="Web References\localhostEmployee\EmployeeManagementService.wsdl" />
+    <Content Include="Web References\localhostEmployee\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\localhostSchedule\ScheduleManagementService.wsdl" />
+    <None Include="Web References\localhostUser\UserManagementService.wsdl" />
+    <Content Include="SupervisorViewRequests.aspx" />
+    <Content Include="SupervisorRequestViewForm.aspx" />
+    <Content Include="AdminVierwRequest.aspx" />
+    <Content Include="AdminCreateSchedule.aspx" />
+    <Content Include="AdminManageSchedule.aspx" />
+    <Content Include="AdminCreateAttendance.aspx" />
+    <Content Include="AdminManageAttendance.aspx" />
+    <Content Include="SupervisorNextweekSchedule.aspx" />
+    <Content Include="AdminRequestViewForm.aspx" />
+    <Content Include="WorkerAttendance.aspx" />
+    <Content Include="WorkerNextWeekSchedule.aspx" />
+    <Content Include="WorkerHome.aspx" />
+    <Content Include="WorkerMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceManagementService.asmx.cs">
+      <DependentUpon>AttendanceManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmployeeManagementService.asmx.cs">
+      <DependentUpon>EmployeeManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RequestManagementService.asmx.cs">
+      <DependentUpon>RequestManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScheduleManagementService.asmx.cs">
+      <DependentUpon>ScheduleManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShiftManagementService.asmx.cs">
+      <DependentUpon>ShiftManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SupervisorMaster.Master.cs">
+      <DependentUpon>SupervisorMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorMaster.Master.designer.cs">
+      <DependentUpon>SupervisorMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagementService.asmx.cs">
+      <DependentUpon>UserManagementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewDocument.aspx.cs">
+      <DependentUpon>ViewDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDocument.aspx.designer.cs">
+      <DependentUpon>ViewDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostAttendance\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostEmployee\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostRequest\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostSchedule\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostShift\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhostUser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddUserForm.aspx.cs">
+      <DependentUpon>AdminAddUserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAddUserForm.aspx.designer.cs">
+      <DependentUpon>AdminAddUserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageUser.aspx.cs">
+      <DependentUpon>AdminManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManageUser.aspx.designer.cs">
+      <DependentUpon>AdminManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUpdateUserForm.aspx.cs">
+      <DependentUpon>AdminUpdateUserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUpdateUserForm.aspx.designer.cs">
+      <DependentUpon>AdminUpdateUserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorHome.aspx.cs">
+      <DependentUpon>SupervisorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorHome.aspx.designer.cs">
+      <DependentUpon>SupervisorHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorManageSchedule.aspx.cs">
+      <DependentUpon>SupervisorManageSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorManageSchedule.aspx.designer.cs">
+      <DependentUpon>SupervisorManageSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorViewRequests.aspx.cs">
+      <DependentUpon>SupervisorViewRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorViewRequests.aspx.designer.cs">
+      <DependentUpon>SupervisorViewRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorRequestViewForm.aspx.cs">
+      <DependentUpon>SupervisorRequestViewForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorRequestViewForm.aspx.designer.cs">
+      <DependentUpon>SupervisorRequestViewForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminVierwRequest.aspx.cs">
+      <DependentUpon>AdminVierwRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminVierwRequest.aspx.designer.cs">
+      <DependentUpon>AdminVierwRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreateSchedule.aspx.cs">
+      <DependentUpon>AdminCreateSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCreateSchedule.aspx.designer.cs">
+      <DependentUpon>AdminCreateSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageSchedule.aspx.cs">
+      <DependentUpon>AdminManageSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManageSchedule.aspx.designer.cs">
+      <DependentUpon>AdminManageSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreateAttendance.aspx.cs">
+      <DependentUpon>AdminCreateAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCreateAttendance.aspx.designer.cs">
+      <DependentUpon>AdminCreateAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminManageAttendance.aspx.cs">
+      <DependentUpon>AdminManageAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminManageAttendance.aspx.designer.cs">
+      <DependentUpon>AdminManageAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisorNextweekSchedule.aspx.cs">
+      <DependentUpon>SupervisorNextweekSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupervisorNextweekSchedule.aspx.designer.cs">
+      <DependentUpon>SupervisorNextweekSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRequestViewForm.aspx.cs">
+      <DependentUpon>AdminRequestViewForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminRequestViewForm.aspx.designer.cs">
+      <DependentUpon>AdminRequestViewForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerAttendance.aspx.cs">
+      <DependentUpon>WorkerAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerAttendance.aspx.designer.cs">
+      <DependentUpon>WorkerAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerNextWeekSchedule.aspx.cs">
+      <DependentUpon>WorkerNextWeekSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerNextWeekSchedule.aspx.designer.cs">
+      <DependentUpon>WorkerNextWeekSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerHome.aspx.cs">
+      <DependentUpon>WorkerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerHome.aspx.designer.cs">
+      <DependentUpon>WorkerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerMaster.Master.cs">
+      <DependentUpon>WorkerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkerMaster.Master.designer.cs">
+      <DependentUpon>WorkerMaster.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{e5d016f6-9db4-448a-8326-814e86da7fb1}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://localhost:44308/AttendanceManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostAttendance\</RelPath>
+      <UpdateFromURL>https://localhost:44308/AttendanceManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostAttendance_AttendanceManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44308/EmployeeManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostEmployee\</RelPath>
+      <UpdateFromURL>https://localhost:44308/EmployeeManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostEmployee_EmployeeManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44308/RequestManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostRequest\</RelPath>
+      <UpdateFromURL>https://localhost:44308/RequestManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostRequest_RequestManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44308/ScheduleManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostSchedule\</RelPath>
+      <UpdateFromURL>https://localhost:44308/ScheduleManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostSchedule_ScheduleManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44308/ShiftManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostShift\</RelPath>
+      <UpdateFromURL>https://localhost:44308/ShiftManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostShift_ShiftManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://localhost:44308/UserManagementService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhostUser\</RelPath>
+      <UpdateFromURL>https://localhost:44308/UserManagementService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ShiftSyncPro_localhostUser_UserManagementService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51418</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44308/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
